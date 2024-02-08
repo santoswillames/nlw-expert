@@ -3,7 +3,7 @@ import { View, FlatList, SectionList, Text } from "react-native";
 
 import { Link } from "expo-router";
 
-import { CATEGORIES, MENU } from "@/utils/data/products";
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products";
 
 import { useCartStore } from "@/stores/cartStore";
 
@@ -21,7 +21,7 @@ export default function Home() {
     0
   );
 
-  const sectionListRef = useRef<SectionList>(null);
+  const sectionListRef = useRef<SectionList<ProductProps>>(null);
   const flatListRef = useRef<FlatList>(null);
 
   function handleCategorySelect(selectedCategory: string) {
